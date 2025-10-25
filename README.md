@@ -8,6 +8,9 @@
 ### 🎓 **Carrera:**  
 **Programación y Análisis de Sistemas — AIEP Concepción**  
 
+### 👨‍🏫 **Profesor Guía:**  
+**Víctor Valderrama**  
+
 ### 📅 **Año:**  
 **2025**
 
@@ -43,8 +46,32 @@ El proyecto busca optimizar la administración de redes, automatizar la detecci�
 ---
 
 ## 📂 **Estructura Sugerida del Proyecto**
-
-/documentos → Avances, informes y documentación
+ /documentos → Avances, informes y documentación
 /diagramas → DFD, diagramas de actividades y clases
 /codigo/php → Archivos PHP y scripts principales
 /codigo/sql → Scripts SQL y modelo de base de datos
+
+
+
+---
+
+## 🚀 **Guía de Ejecución Rápida**
+1️⃣ Instalar **XAMPP** y **Nmap** en el equipo local.  
+2️⃣ Importar el archivo SQL: `codigo/sql/gestion_red.sql` en **phpMyAdmin**.  
+3️⃣ Copiar la carpeta del proyecto a `htdocs` (si usas XAMPP).  
+4️⃣ Iniciar los servicios Apache y MySQL.  
+5️⃣ Abrir en navegador:  
+👉 `http://localhost/gestion_ip`  
+
+---
+
+## 🪪 **Licencia**
+📄 Este proyecto se distribuye bajo la licencia **MIT**, que permite el uso, copia y modificación del software con reconocimiento al autor.  
+Consulta el archivo `LICENSE` para más información.
+
+---
+
+## 🌟 **Créditos**
+Desarrollado por **Charlie Bailey Moya**, bajo la guía de **Profesor Víctor Valderrama**,  
+como proyecto de título para **AIEP Concepción (2025)**.  
+El sistema promueve el uso de **software libre y herramientas open source** para la gestión eficiente de redes locales.
