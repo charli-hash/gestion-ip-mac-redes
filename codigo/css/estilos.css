@@ -1,0 +1,35 @@
+:root{
+  --bg:#0b1020; --card:#121a33; --muted:#98a2b3; --accent:#4f46e5;
+  --text:#e5e7eb; --line:#243152;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:24px}
+.navbar{display:flex;gap:16px;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.02);border-bottom:1px solid var(--line);padding:12px 24px}
+.brand{display:flex;gap:10px;align-items:center;font-weight:700}
+.brand .logo{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#8b5cf6)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.btn{padding:8px 12px;border:1px solid var(--line);background:#0f1831;color:#e5e7eb;border-radius:8px;cursor:pointer}
+.btn.primary{background:linear-gradient(135deg,var(--accent),#7c3aed);border-color:transparent}
+.center{display:flex;align-items:center;justify-content:center;min-height:70vh}
+.login{width:100%;max-width:420px;background:var(--card);border:1px solid var(--line);padding:26px;border-radius:12px}
+.login h1{margin:0 0 8px 0;font-size:22px}
+.sep{height:1px;background:var(--line);border:0;margin:12px 0}
+.muted{color:var(--muted);font-size:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.grid.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.metric{font-size:28px;font-weight:700}
+.table{width:100%;border-collapse:collapse;margin-top:12px}
+.table thead th{font-size:12px;color:#9ca3af;text-align:left;padding:8px 10px}
+.table tbody tr{background:var(--card);border:1px solid var(--line)}
+.table tbody td{padding:10px}
+.tag{font-size:11px;border:1px solid var(--line);padding:4px 8px;border-radius:999px;color:#cbd5e1}
+.footer{margin-top:18px;color:#94a3b8;font-size:12px;text-align:center}
+.status.ok{color:#22c55e}
+.status.bad{color:#f87171}
+.section-title{margin:18px 0 10px 0;font-size:18px;font-weight:700}
+.row{display:flex;gap:10px;align-items:center;margin-top:12px}
+.input{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:#0f1831;color:#e5e7eb}
+.alert{border:1px dashed var(--line);padding:10px;border-radius:10px;background:#2b1733;color:#fca5a5}
+.logo{display:inline-block;width:28px;height:28px;border-radius:8px}
