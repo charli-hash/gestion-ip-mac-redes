@@ -12,14 +12,15 @@ $me = current_user(); // ['rol_nivel'=>1/2/3, 'rol_nombre'=>'lector|operador|adm
 $minutosActivo = 30;
 
 /* ===============================
-   KPIs: Activos / Inactivos
+   KPIs: Activos / Inactivos (excluye eliminados)
    =============================== */
 
 // Activos
 $sqlCountActivos = "
     SELECT COUNT(*) AS c
     FROM dispositivo
-    WHERE ultima_actualizacion IS NOT NULL
+    WHERE (eliminado IS NULL OR eliminado=0)
+      AND ultima_actualizacion IS NOT NULL
       AND ultima_actualizacion >= (NOW() - INTERVAL {$minutosActivo} MINUTE)
 ";
 $activos = 0;
@@ -32,8 +33,11 @@ if ($res = $conn->query($sqlCountActivos)) {
 $sqlCountInactivos = "
     SELECT COUNT(*) AS c
     FROM dispositivo
-    WHERE ultima_actualizacion IS NULL
-       OR ultima_actualizacion < (NOW() - INTERVAL {$minutosActivo} MINUTE)
+    WHERE (eliminado IS NULL OR eliminado=0)
+      AND (
+            ultima_actualizacion IS NULL
+         OR ultima_actualizacion < (NOW() - INTERVAL {$minutosActivo} MINUTE)
+      )
 ";
 $inactivos = 0;
 if ($res = $conn->query($sqlCountInactivos)) {
@@ -41,14 +45,11 @@ if ($res = $conn->query($sqlCountInactivos)) {
     $inactivos = (int)$row['c'];
 }
 
-// Total dispositivos
+// Total dispositivos (visibles)
 $total = $activos + $inactivos;
 
-// Pendiente implementar IP duplicadas
-$duplicadas = 0;
-
 /* ===============================
-   Usuarios de Red (KPIs nuevos)
+   Usuarios de Red (KPIs)
    =============================== */
 
 // Total de usuarios de red
@@ -69,7 +70,7 @@ if ($res) $usuariosAsignados = (int)$res->fetch_assoc()['c'];
 $usuariosSinAsignar = max(0, $totalUsuariosRed - $usuariosAsignados);
 
 /* ===============================
-   Últimos 10 dispositivos
+   Últimos 10 dispositivos (excluye eliminados)
    =============================== */
 /*
    Tomamos el usuario de red vigente usando usuario_red_dispositivo:
@@ -106,6 +107,7 @@ $sqlUltimos = "
           )
     ) as asig
       ON asig.dispositivo_id = d.id
+    WHERE (d.eliminado IS NULL OR d.eliminado=0)
     ORDER BY d.ultima_actualizacion DESC, d.ip ASC
     LIMIT 10
 ";
@@ -425,6 +427,16 @@ if ($res && $row = $res->fetch_assoc()) {
         <form action="/gestion_ipmac/codigo/php/import_pihole.php" method="post" style="display:inline;">
           <button class="btn" type="submit">📥 Importar DNS (Pi-hole)</button>
         </form>
+
+        <form action="/gestion_ipmac/codigo/php/export_csv.php" method="get" style="display:inline;">
+          <button class="btn" type="submit">⬇ Generar reporte CSV</button>
+        </form>
+
+        <a class="btn" href="/gestion_ipmac/codigo/php/auditoria.php">📝 Auditoría</a>
+      <?php endif; ?>
+
+      <?php if (is_admin()): ?>
+        <a class="btn" href="/gestion_ipmac/codigo/php/backup.php">🧰 Backup BD</a>
       <?php endif; ?>
 
       <a class="btn" href="/gestion_ipmac/codigo/php/inventario.php">📦 Inventario</a>
@@ -458,14 +470,6 @@ if ($res && $row = $res->fetch_assoc()) {
         <div class="metric"><?= (int)$total ?></div>
         <div class="muted">registrados</div>
       </div>
-
-      <?php if (is_admin()): ?>
-      <div class="card">
-        <h3>IP duplicadas</h3>
-        <div class="metric"><?= (int)$duplicadas ?></div>
-        <div class="muted">posibles conflictos</div>
-      </div>
-      <?php endif; ?>
     </div>
 
     <!-- KPIs Usuarios de Red -->

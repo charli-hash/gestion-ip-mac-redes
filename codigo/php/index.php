@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <div class="page-center-wrapper">
     <form class="page-card" method="post">
       <h2>Ingresar al sistema</h2>
-      <p class="muted">Gestión IP/MAC — Demo con Nmap y Pi-hole</p>
+      <p class="muted">Gestión IP/MAC </p>
 
       <hr style="border:none; border-bottom:1px solid rgba(55,65,81,0.8); margin:12px 0 14px;">
 
@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
       <div class="login-row">
         <button class="btn primary" type="submit">Iniciar sesión</button>
-        <span class="muted">Demo: <b>admin@local / admin</b></span>
+        <span class="muted"><b></b></span>
       </div>
     </form>
   </div>
