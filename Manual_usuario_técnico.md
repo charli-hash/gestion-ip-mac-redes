@@ -1,48 +1,48 @@
-# 🧾 Manual de Usuario y Técnico  
-### Sistema de Gestión IP/MAC Integrado con Nmap, Pi-hole y Docker  
+¡Hecho! Aquí tienes el Markdown corregido y listo para pegar en GitHub. Arreglé los bloques de código (YAML/Bash/PHP/Mermaid), cerré etiquetas, ordené títulos/tablas y limpié saltos para que se renderice perfecto.
+
+# 🧾 Manual de Usuario y Técnico
+### Sistema de Gestión IP/MAC Integrado con Nmap, Pi-hole y Docker
 
 **Autor:** Charlie Bailey Moya  
 **Carrera:** Programación y Análisis de Sistemas – AIEP Concepción  
 **Docente:** Víctor Valderrama Mora  
-**Año:** 2025  
+**Año:** 2025
 
 ---
 
-## ⚙️ Instalación y Configuración  
+## ⚙️ Instalación y Configuración
 
-### Requisitos Previos  
+### Requisitos Previos
 
-| Herramienta | Descripción | Uso principal |
-|-------------|--------------|----------------|
-| **XAMPP** | Incluye Apache, PHP y MySQL. | Entorno local para ejecutar la aplicación web y la base de datos. |
-| **Docker Desktop** | Plataforma de contenedores. | Permite correr Pi-hole y servicios adicionales. |
-| **Nmap** | Herramienta de escaneo de red. | Detecta IP, MAC y fabricantes de dispositivos conectados. |
-| **Pi-hole** | Servidor DNS local open source. | Registra y filtra las consultas DNS generadas en la red. |
+| Herramienta       | Descripción                     | Uso principal                                                     |
+|-------------------|---------------------------------|------------------------------------------------------------------|
+| **XAMPP**         | Incluye Apache, PHP y MySQL.    | Entorno local para ejecutar la aplicación web y la base de datos.|
+| **Docker Desktop**| Plataforma de contenedores.     | Permite correr Pi-hole y servicios adicionales.                  |
+| **Nmap**          | Herramienta de escaneo de red.  | Detecta IP, MAC y fabricantes de dispositivos conectados.        |
+| **Pi-hole**       | Servidor DNS local open source. | Registra y filtra las consultas DNS generadas en la red.         |
 
 ---
 
-### Instalación Paso a Paso  
+### 🧱 1️⃣ Instalar XAMPP
 
-#### 🧱 1️⃣ Instalar XAMPP  
-
-1. Descargar desde [https://www.apachefriends.org](https://www.apachefriends.org)  
-2. Instalar en la ruta por defecto `C:\xampp\`  
+1. Descargar desde <https://www.apachefriends.org>  
+2. Instalar en la ruta por defecto: `C:\xampp\`  
 3. Iniciar **Apache** y **MySQL** desde el *XAMPP Control Panel*  
-4. Verificar funcionamiento en el navegador: [http://localhost](http://localhost)  
+4. Verificar en el navegador: <http://localhost>
 
 ---
 
-#### 🐳 2️⃣ Instalar Docker Desktop  
+### 🐳 2️⃣ Instalar Docker Desktop
 
-1. Descargar Docker Desktop desde [https://www.docker.com](https://www.docker.com)  
-2. Instalar y activar la opción **“Use WSL 2 based engine”**  
-3. Iniciar Docker Desktop y confirmar que el servicio esté activo.  
+1. Descargar desde <https://www.docker.com>  
+2. Activar **Use WSL 2 based engine**  
+3. Iniciar Docker Desktop y confirmar que esté activo.
 
 ---
 
-#### 🧩 3️⃣ Configurar Pi-hole con Docker  
+### 🧩 3️⃣ Configurar Pi-hole con Docker
 
-1. En la carpeta raíz del proyecto (`C:\xampp\htdocs\gestion_ipmac\`), crear el archivo **`docker-compose.yml`**:
+En la carpeta del proyecto `C:\xampp\htdocs\gestion_ipmac\` crear **docker-compose.yml**:
 
 ```yaml
 version: '3.8'
@@ -59,61 +59,51 @@ services:
     restart: unless-stopped
 
 
----
-
-#### En la terminal PowerShell o CMD, ejecutar:
+Levantar el servicio:
 
 cd C:\xampp\htdocs\gestion_ipmac\
 docker-compose up -d
 
 
-Acceder a la interfaz web:
-👉 http://localhost:8053/admin
+Acceso a la consola de administración: http://localhost:8053/admin
 
-Iniciar sesión (contraseña: admin) y verificar que el servicio DNS esté activo.
-
+(Contraseña: admin)
 
 🔍 4️⃣ Instalar Nmap
 
-Descargar desde 👉 https://nmap.org/download.html
+Descargar desde https://nmap.org/download.html
 
-Instalar en la ruta:
-C:\Program Files (x86)\Nmap\
+Instalar en: C:\Program Files (x86)\Nmap\
 
-Comprobar instalación en CMD:
+Probar en CMD:
 
 nmap -v
 
-
 💻 5️⃣ Instalar el Sistema de Gestión IP/MAC
 
-Clonar o descargar el repositorio:
+Clonar o descargar y mover a C:\xampp\htdocs\:
 
 git clone https://github.com/charli-hash/gestion-ipmac.git
 
-Mover la carpeta descargada a:
-C:\xampp\htdocs\
 
-Abrir phpMyAdmin 👉 http://localhost/phpmyadmin
+Crear base de datos e importar script:
 
-Crear la base de datos:
-gestion_ip_mac_v2
+Abrir phpMyAdmin: http://localhost/phpmyadmin
 
-Importar el archivo SQL:
-sql/gestion_ip_mac_v2.sql
+Crear BD: gestion_ip_mac_v2
 
-Revisar el archivo de conexión (conexion.php):
+Importar: sql/gestion_ip_mac_v2.sql
+
+Configurar conexión en codigo/php/conexion.php:
 
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "gestion_ip_mac_v2";
-
+$username   = "root";
+$password   = "";
+$dbname     = "gestion_ip_mac_v2";
 
 🌐 6️⃣ Acceder al Sistema
 
-Abrir el navegador y acceder a:
-👉 http://localhost:8080/gestion_ipmac/codigo/php/index.php
+URL: http://localhost:8080/gestion_ipmac/codigo/php/index.php
 
 Credenciales iniciales:
 
@@ -122,46 +112,36 @@ Administrador: admin@demo / admin123
 Operador: operador@demo / operador123
 
 🧠 7️⃣ Verificar Integración Completa
-
-| Servicio      | Acción                            | Resultado esperado                        |
-| ------------- | --------------------------------- | ----------------------------------------- |
-| **Nmap**      | Ejecutar escaneo desde el sistema | Detección de IP, MAC y fabricantes.       |
-| **Pi-hole**   | Monitorear registros DNS          | Consultas activas en tiempo real.         |
-| **Dashboard** | Visualizar métricas               | KPIs actualizados sin recargar la página. |
-
-
+Servicio	Acción	Resultado esperado
+Nmap	Ejecutar escaneo	Detección de IP, MAC y fabricantes.
+Pi-hole	Monitorear registros DNS	Consultas activas en tiempo real.
+Dashboard	Visualizar métricas	KPIs actualizados sin recargar la página.
 👤 Manual del Usuario
+Módulo	Descripción	Rol
+Inicio de sesión	Acceso seguro por rol (Administrador / Operador).	Sistema
+Escaneo Nmap	Detecta y registra IP, MAC y fabricantes.	Sistema
+Integración Pi-hole	Importa registros DNS asociados a dispositivos.	Sistema
+Dashboard	KPIs globales, alertas y actividad DNS.	Administrador
+Gestión CRUD	ABM de usuarios y dispositivos.	Administrador
+Reportes CSV/PDF	Exportación de registros.	Operador/Admin
+Backup	Generación de copias de seguridad.	Administrador
 
-| Módulo                  | Descripción                                         | Rol            |
-| ----------------------- | --------------------------------------------------- | -------------- |
-| **Inicio de sesión**    | Acceso seguro por rol (Administrador / Operador).   | Sistema        |
-| **Escaneo Nmap**        | Detecta y registra IP, MAC y fabricantes.           | Sistema        |
-| **Integración Pi-hole** | Importa registros DNS asociados a dispositivos.     | Sistema        |
-| **Dashboard**           | Visualiza KPIs globales, alertas y actividad DNS.   | Administrador  |
-| **Gestión CRUD**        | Alta, baja y modificación de usuarios/dispositivos. | Administrador  |
-| **Reportes CSV/PDF**    | Exporta registros del sistema.                      | Operador/Admin |
-| **Backup**              | Permite generar copias de seguridad.                | Administrador  |
+Flujo de uso (resumen):
 
+Iniciar sesión.
 
-
-Flujo de uso:
-
-Iniciar sesión con credenciales.
-
-Configurar el rango de red.
+Configurar rango de red.
 
 Ejecutar escaneo con Nmap.
 
-Importar registros DNS desde Pi-hole.
+Importar DNS desde Pi-hole.
 
-Visualizar actividad y KPIs en el dashboard.
+Revisar KPIs/alertas en el dashboard.
 
-Exportar reportes o ejecutar copia de respaldo.
-
+Exportar reportes o realizar backup.
 
 🧩 Manual Técnico
-🧱 Arquitectura del Sistema
-
+🧱 Arquitectura del Sistema (Mermaid)
 graph TD
     A[Cliente Web] -->|HTTP| B[Servidor PHP/Apache (XAMPP)]
     B -->|Consultas SQL| C[(Base de Datos MySQL)]
@@ -171,11 +151,9 @@ graph TD
     C -->|Datos procesados| F[Dashboard y Reportes]
     F -->|Exportación| G[CSV / PDF]
 
+📁 Estructura Real del Proyecto (XAMPP)
 
-📁 Estructura Real del Proyecto (Verificada en XAMPP)
-
-Ruta principal:
-C:\xampp\htdocs\gestion_ipmac\
+Ruta principal: C:\xampp\htdocs\gestion_ipmac\
 
 gestion_ipmac/
 ├── codigo/
@@ -208,46 +186,38 @@ gestion_ipmac/
 ├── docker-compose.yml
 └── README.md
 
-
-
 🔐 Seguridad del Sistema
 
 Control de acceso por roles (Administrador / Operador).
 
-Validación automática para evitar duplicados de MAC.
+Validación para evitar duplicados de MAC.
 
-Registro de auditoría con usuario, acción y fecha/hora.
+Registro de auditoría (usuario, acción, fecha/hora).
 
-Sesiones PHP seguras con expiración controlada.
+Sesiones PHP con expiración controlada.
 
-Acceso restringido a funciones críticas del sistema.
+Acceso restringido a funciones críticas.
 
 💾 Copias de Seguridad
 
-Generadas desde el módulo Backup.
+Desde el módulo Backup.
 
-Formatos disponibles: .sql o .zip.
+Formatos: .sql o .zip.
 
-Recomendado: realizar una copia semanal o antes de actualizar el sistema.
+Sugerencia: copia semanal o antes de actualizar.
 
 ⚙️ Mantenimiento y Actualización
 
-Actualizar dependencias mediante descarga directa de nuevas versiones de Nmap y Pi-hole.
-
-En caso de error en el contenedor Docker, ejecutar:
-
+Actualizar herramientas (Nmap, Pi-hole) desde sus sitios oficiales.
+Si falla el contenedor:
 
 docker-compose down
 docker-compose up -d
 
-
 🧠 Autor y Licencia
 
 Desarrollador: Charlie Bailey Moya
-Licencia: MIT
+Licencia: MIT — uso, modificación y redistribución con atribución.
 
-Permite uso, modificación y redistribución libre, siempre con atribución al autor.
-
-Repositorio oficial:
-https://github.com/charli-hash/gestion-ipmac
+Repositorio: https://github.com/charli-hash/gestion-ipmac
 
