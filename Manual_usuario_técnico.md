@@ -59,7 +59,9 @@ services:
     restart: unless-stopped
 
 
-En la terminal PowerShell o CMD, ejecutar:
+---
+
+#### En la terminal PowerShell o CMD, ejecutar:
 
 cd C:\xampp\htdocs\gestion_ipmac\
 docker-compose up -d
