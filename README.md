@@ -1,77 +1,127 @@
-# 🖥️ **Sistema de Gestión de IP y MAC con Nmap y Pi-hole**
+📡 Sistema de Gestión IP / MAC con Nmap y Pi-hole
+👨‍💻 Autor
 
----
+Charlie Bailey Moya
 
-### 👨‍💻 **Autor:**  
-**Charlie Bailey Moya**  
+🎓 Carrera
 
-### 🎓 **Carrera:**  
-**Programación y Análisis de Sistemas — AIEP Concepción**  
+Programación y Análisis de Sistemas — AIEP Concepción
 
-### 👨‍🏫 **Profesor Guía:**  
-**Víctor Valderrama**  
+👨‍🏫 Profesor Guía
 
-### 📅 **Año:**  
-**2025**
+Víctor Valderrama
 
----
+📅 Año
 
-## 📘 **Descripción**
-Sistema general para el **inventario y control de dispositivos en redes locales**.  
-Integra **Nmap** (detección de IP, MAC y hostname) y **Pi-hole** (registro de consultas DNS) en una **interfaz web desarrollada con PHP y MySQL**.  
-El proyecto busca optimizar la administración de redes, automatizar la detección de equipos y mejorar la trazabilidad del tráfico en tiempo real.
+2025
 
----
+📘 Descripción del Proyecto
 
-## 🎯 **Objetivo General (SMART)**
-> Diseñar e implementar un sistema de gestión de IP y MAC integrando **Nmap** y **Pi-hole**, alcanzando una detección automatizada del **90% de los dispositivos activos** antes de diciembre de 2025.
+Sistema web para el inventario, monitoreo y control de dispositivos en redes locales, orientado a entornos educativos, domésticos y pequeñas organizaciones.
 
----
+El sistema integra:
 
-## 🧩 **Objetivos Específicos (SMART)**
-1. Analizar distintos entornos de red (hogar, oficina, PyME, laboratorio).  
-2. Diseñar una base de datos MySQL y una interfaz PHP con operaciones CRUD.  
-3. Integrar **Nmap** para la detección automática de dispositivos activos.  
-4. Incorporar **Pi-hole** para el registro de dominios consultados por IP.  
-5. Evaluar el rendimiento, precisión y escalabilidad del sistema.
+Nmap para la detección automática de dispositivos activos (IP, MAC, hostname).
 
----
+Pi-hole para el registro y análisis de consultas DNS en tiempo real.
 
-## ⚙️ **Tecnologías Utilizadas**
-🧠 **Lenguajes y Frameworks:** PHP · HTML · CSS · JavaScript  
-🗄️ **Base de Datos:** MySQL  
-🔍 **Herramientas de Red:** Nmap · Pi-hole  
-🖥️ **Entorno de Pruebas:** XAMPP (Apache + MySQL + PHP)
+Interfaz web desarrollada en PHP y MySQL, con dashboard visual y módulos administrativos.
 
----
+El objetivo principal es mejorar la trazabilidad de los dispositivos conectados, optimizar la administración de red y facilitar la auditoría del tráfico DNS.
 
-## 📂 **Estructura Sugerida del Proyecto**
- /documentos → Avances, informes y documentación
-/diagramas → DFD, diagramas de actividades y clases
-/codigo/php → Archivos PHP y scripts principales
-/codigo/sql → Scripts SQL y modelo de base de datos
+🎯 Objetivo General (SMART)
+
+Diseñar e implementar un sistema de gestión de IP y MAC integrando Nmap y Pi-hole, logrando una detección automatizada de al menos el 90 % de los dispositivos activos, antes de diciembre de 2025.
+
+🧩 Objetivos Específicos (SMART)
+
+Analizar distintos entornos de red (hogar, instituto, laboratorio).
+
+Diseñar una base de datos MySQL orientada a la trazabilidad de dispositivos y consultas DNS.
+
+Implementar una interfaz web en PHP con operaciones CRUD.
+
+Integrar Nmap para la detección automática de dispositivos activos.
+
+Incorporar Pi-hole para el registro de dominios consultados por IP.
+
+Evaluar rendimiento, precisión y escalabilidad del sistema.
+
+⚙️ Tecnologías Utilizadas
+🧠 Lenguajes y Desarrollo Web
+
+PHP
+
+HTML
+
+CSS
+
+JavaScript
+
+🗄️ Base de Datos
+
+MySQL
+
+🔍 Herramientas de Red
+
+Nmap
+
+Pi-hole (Docker)
+
+🖥️ Entorno de Pruebas
+
+XAMPP (Apache + MySQL + PHP)
+
+Docker Desktop (para Pi-hole)
+
+📂 Estructura del Proyecto
+/documentos
+ └─ Avances, informes y documentación académica
+
+/diagramas
+ └─ DFD, diagramas de clases, procesos y actividades
+
+/codigo
+ ├─ /php
+ │   └─ Archivos PHP, dashboard y scripts principales
+ └─ /sql
+     └─ Scripts SQL y modelo de base de datos
+
+🚀 Guía de Ejecución Rápida
+
+1️⃣ Instalar XAMPP y Nmap en el equipo local.
+2️⃣ Importar el archivo SQL ubicado en:
+
+codigo/sql/gestion_red.sql
 
 
+usando phpMyAdmin.
 
----
+3️⃣ Copiar la carpeta del proyecto dentro de:
 
-## 🚀 **Guía de Ejecución Rápida**
-1️⃣ Instalar **XAMPP** y **Nmap** en el equipo local.  
-2️⃣ Importar el archivo SQL: `codigo/sql/gestion_red.sql` en **phpMyAdmin**.  
-3️⃣ Copiar la carpeta del proyecto a `htdocs` (si usas XAMPP).  
-4️⃣ Iniciar los servicios Apache y MySQL.  
-5️⃣ Abrir en navegador:  
-👉 `http://localhost/gestion_ip`  
+htdocs/
 
----
 
-## 🪪 **Licencia**
-📄 Este proyecto se distribuye bajo la licencia **MIT**, que permite el uso, copia y modificación del software con reconocimiento al autor.  
-Consulta el archivo `LICENSE` para más información.
+(si utilizas XAMPP).
 
----
+4️⃣ Iniciar los servicios Apache y MySQL.
 
-## 🌟 **Créditos**
-Desarrollado por **Charlie Bailey Moya**, bajo la guía de **Profesor Víctor Valderrama**,  
-como proyecto de título para **AIEP Concepción (2025)**.  
-El sistema promueve el uso de **software libre y herramientas open source** para la gestión eficiente de redes locales.
+5️⃣ (Opcional) Iniciar Docker Desktop si se usará Pi-hole.
+
+6️⃣ Acceder desde el navegador:
+
+http://localhost/gestion_ip
+
+🪪 Licencia
+
+📄 Este proyecto se distribuye bajo la Licencia MIT, que permite el uso, copia y modificación del software, siempre que se reconozca al autor original.
+
+Consulta el archivo LICENSE para más información.
+
+🌟 Créditos
+
+Desarrollado por Charlie Bailey Moya,
+bajo la guía del Profesor Víctor Valderrama,
+como proyecto académico para AIEP Concepción (2025).
+
+El sistema promueve el uso de software libre y herramientas open source para la gestión eficiente y responsable de redes locales.*software libre y herramientas open source** para la gestión eficiente de redes locales.
