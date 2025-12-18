@@ -1,127 +1,107 @@
-📡 Sistema de Gestión IP / MAC con Nmap y Pi-hole
+🚦 Gestión de IP & MAC
+🔍 Monitoreo de Redes con Nmap + Pi-hole
+
+💡 Sistema web para inventario, detección automática y análisis de tráfico DNS en redes locales.
+
 👨‍💻 Autor
 
-Charlie Bailey Moya
+🧑‍💻 Charlie Bailey Moya
+🎓 Programación y Análisis de Sistemas — AIEP Concepción
+📅 2025
 
-🎓 Carrera
+🧠 ¿Qué hace este proyecto?
 
-Programación y Análisis de Sistemas — AIEP Concepción
+Este sistema permite visualizar, administrar y auditar dispositivos conectados a una red local de forma centralizada.
 
-👨‍🏫 Profesor Guía
+🔎 Detecta automáticamente
 
-Víctor Valderrama
+📡 IP
 
-📅 Año
+🆔 MAC
 
-2025
+💻 Hostname
 
-📘 Descripción del Proyecto
+⚡ Estado del dispositivo (activo / inactivo)
 
-Sistema web para el inventario, monitoreo y control de dispositivos en redes locales, orientado a entornos educativos, domésticos y pequeñas organizaciones.
+🌐 Monitorea tráfico DNS
 
-El sistema integra:
+🌍 Dominios consultados por cada IP
 
-Nmap para la detección automática de dispositivos activos (IP, MAC, hostname).
+🧾 Tipos de consultas (A, AAAA, HTTPS)
 
-Pi-hole para el registro y análisis de consultas DNS en tiempo real.
+📊 Historial y estadísticas en tiempo real
 
-Interfaz web desarrollada en PHP y MySQL, con dashboard visual y módulos administrativos.
+Todo integrado en una interfaz web moderna y clara, pensada para laboratorios, institutos y redes pequeñas/medianas.
 
-El objetivo principal es mejorar la trazabilidad de los dispositivos conectados, optimizar la administración de red y facilitar la auditoría del tráfico DNS.
+🎯 Objetivo del proyecto
 
-🎯 Objetivo General (SMART)
+🎯 Diseñar e implementar un sistema que automatice la detección de dispositivos y el monitoreo DNS, utilizando herramientas open source y una arquitectura simple pero escalable.
 
-Diseñar e implementar un sistema de gestión de IP y MAC integrando Nmap y Pi-hole, logrando una detección automatizada de al menos el 90 % de los dispositivos activos, antes de diciembre de 2025.
+🧩 Funcionalidades principales
 
-🧩 Objetivos Específicos (SMART)
+✅ Escaneo automático de red con Nmap
+✅ Registro de dispositivos activos e inactivos
+✅ Importación de consultas DNS desde Pi-hole
+✅ 📊 Dashboard con métricas y estadísticas
+✅ 🌐 Gestión de redes (CIDR)
+✅ 📤 Exportación de datos (CSV)
+✅ 🔐 Auditoría básica de actividad
 
-Analizar distintos entornos de red (hogar, instituto, laboratorio).
+⚙️ Tecnologías utilizadas
+🖥️ Backend
 
-Diseñar una base de datos MySQL orientada a la trazabilidad de dispositivos y consultas DNS.
+🐘 PHP
 
-Implementar una interfaz web en PHP con operaciones CRUD.
+🎨 Frontend
 
-Integrar Nmap para la detección automática de dispositivos activos.
+🎨 HTML
 
-Incorporar Pi-hole para el registro de dominios consultados por IP.
+🎨 CSS
 
-Evaluar rendimiento, precisión y escalabilidad del sistema.
+⚙️ JavaScript
 
-⚙️ Tecnologías Utilizadas
-🧠 Lenguajes y Desarrollo Web
+🗄️ Base de datos
 
-PHP
+🐬 MySQL
 
-HTML
+🌐 Redes
 
-CSS
+🗺️ Nmap
 
-JavaScript
+🛡️ Pi-hole (Docker)
 
-🗄️ Base de Datos
+🔧 Entorno
 
-MySQL
+🧰 XAMPP
 
-🔍 Herramientas de Red
+🐳 Docker Desktop
 
-Nmap
+📂 Estructura del proyecto
+📁 codigo/php      → Aplicación web
+📁 codigo/sql      → Modelo y scripts de base de datos
+📁 diagramas       → Diagramas del sistema
+📁 documentos      → Informes y documentación
 
-Pi-hole (Docker)
+🚀 Guía rápida de ejecución
 
-🖥️ Entorno de Pruebas
-
-XAMPP (Apache + MySQL + PHP)
-
-Docker Desktop (para Pi-hole)
-
-📂 Estructura del Proyecto
-/documentos
- └─ Avances, informes y documentación académica
-
-/diagramas
- └─ DFD, diagramas de clases, procesos y actividades
-
-/codigo
- ├─ /php
- │   └─ Archivos PHP, dashboard y scripts principales
- └─ /sql
-     └─ Scripts SQL y modelo de base de datos
-
-🚀 Guía de Ejecución Rápida
-
-1️⃣ Instalar XAMPP y Nmap en el equipo local.
-2️⃣ Importar el archivo SQL ubicado en:
-
-codigo/sql/gestion_red.sql
-
-
-usando phpMyAdmin.
-
-3️⃣ Copiar la carpeta del proyecto dentro de:
-
-htdocs/
-
-
-(si utilizas XAMPP).
-
-4️⃣ Iniciar los servicios Apache y MySQL.
-
-5️⃣ (Opcional) Iniciar Docker Desktop si se usará Pi-hole.
-
-6️⃣ Acceder desde el navegador:
+1️⃣ 🧰 Instalar XAMPP, Nmap y Docker Desktop
+2️⃣ 🗄️ Importar la base de datos desde codigo/sql/gestion_red.sql
+3️⃣ 📂 Copiar el proyecto a htdocs/
+4️⃣ ▶️ Iniciar Apache y MySQL
+5️⃣ 🐳 Ejecutar Docker y Pi-hole
+6️⃣ 🌐 Acceder desde el navegador:
 
 http://localhost/gestion_ip
 
 🪪 Licencia
 
-📄 Este proyecto se distribuye bajo la Licencia MIT, que permite el uso, copia y modificación del software, siempre que se reconozca al autor original.
-
-Consulta el archivo LICENSE para más información.
+📄 Este proyecto se distribuye bajo licencia MIT, permitiendo su uso, modificación y distribución con reconocimiento al autor.
 
 🌟 Créditos
 
-Desarrollado por Charlie Bailey Moya,
-bajo la guía del Profesor Víctor Valderrama,
-como proyecto académico para AIEP Concepción (2025).
+👨‍💻 Desarrollado por: Charlie Bailey Moya
+👨‍🏫 Profesor guía: Víctor Valderrama
+🎓 Institución: AIEP Concepción
+📅 Año: 2025
 
-El sistema promueve el uso de software libre y herramientas open source para la gestión eficiente y responsable de redes locales.*software libre y herramientas open source** para la gestión eficiente de redes locales.
+Este proyecto forma parte de un trabajo académico y promueve el uso de software libre y herramientas open source para la gestión eficiente de redes locales.
