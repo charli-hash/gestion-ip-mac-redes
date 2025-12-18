@@ -80,88 +80,71 @@ codigo/
 diagramas/              → Diagramas del sistema
 documentos/             → Informes y documentación académica
 
-🚀 Ejecución Rápida
-1️⃣ Instalación de dependencias
+## 🚀 Ejecución Rápida
+
+### 1️⃣ Instalación de dependencias
 
 Instalar los siguientes componentes en el equipo local:
 
-XAMPP
-
-Nmap
-
-Docker Desktop
-
-2️⃣ Base de datos
-
-Importar la base de datos desde:
-
-codigo/sql/gestion_red.sql
-
-
-utilizando phpMyAdmin.
-
-3️⃣ Despliegue del proyecto
-
-Copiar la carpeta del proyecto dentro de:
-
-htdocs/
-
-4️⃣ Servicios necesarios
-
-Iniciar los siguientes servicios:
-
-Apache
-
-MySQL
-
-Ejecutar:
-
-Docker
-
-Contenedor de Pi-hole
-
-5️⃣ Acceso al sistema
-
-Abrir el sistema desde el navegador web en:
-
-http://localhost/gestion_ip
-
-🪪 Licencia
-
-Proyecto distribuido bajo la Licencia MIT.
-
-Se permite el uso, copia y modificación del software, siempre que se reconozca al autor original.
-
-🌟 Créditos
-
-👨‍💻 Desarrollador: Charlie Bailey Moya
-
-👨‍🏫 Profesor guía: Víctor Valderrama
-
-🎓 Institución: AIEP Concepción
-
-📅 Año: 2025
-
-Proyecto académico que promueve el uso de software libre y herramientas open source para la gestión eficiente de redes locales.
-
-✅ Estado del Proyecto
-
-🟢 Proyecto finalizado
-
-🟢 Probado en redes reales (hogar e instituto)
-
-🟢 Integración Nmap + Pi-hole completamente funcional
-
+- `XAMPP`
+- `Nmap`
+- `Docker Desktop`
 
 ---
 
-Con esto:
+### 2️⃣ Base de datos
 
-✔ **Todo está dentro de Markdown**  
-✔ Nada queda como texto suelto  
-✔ Rutas y URL en bloques de código  
-✔ GitHub lo renderiza perfecto  
-✔ README limpio, bonito y profesional  
+Importar la base de datos desde:
 
-Si quieres, el **último toque pro** sería agregar **badges Markdown arriba**, pero funcionalmente esto ya está **10/10** 👌🚀
+```text
+codigo/sql/gestion_red.sql
+utilizando **phpMyAdmin**.
+
+---
+
+### 3️⃣ Despliegue del proyecto
+
+Copiar la carpeta del proyecto dentro de:
+
+```text
+htdocs/
+### 4️⃣ Servicios necesarios
+
+Iniciar los siguientes servicios:
+
+- `Apache`
+- `MySQL`
+
+Ejecutar:
+
+- `Docker`
+- Contenedor de `Pi-hole`
+
+---
+
+### 5️⃣ Acceso al sistema
+
+Abrir el sistema desde el navegador web en:
+
+```text
+http://localhost/gestion_ip
+## 🪪 Licencia
+
+Proyecto distribuido bajo la **Licencia MIT**.
+
+Se permite el uso, copia y modificación del software, siempre que se reconozca al autor original.
+
+---
+
+## 🌟 Créditos
+
+- 👨‍💻 **Desarrollador:** Charlie Bailey Moya  
+- 👨‍🏫 **Profesor guía:** Víctor Valderrama  
+- 🎓 **Institución:** AIEP Concepción  
+- 📅 **Año:** 2025  
+
+Proyecto académico que promueve el uso de **software libre** y herramientas *open source* para la gestión eficiente de redes locales.
+
+
+
 
